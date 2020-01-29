@@ -26,10 +26,11 @@ setup(
     version='1.0.0',
 
     description='Evolven API Python Client',
+    long_description_content_type='text/markdown',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://gitlab.com/evolven/evolven-api-python',
+    url='https://github.com/evolven-software/evolven-api-python',
 
     # Author details
     author='Evolven Data Science Team',
@@ -48,7 +49,8 @@ setup(
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: API',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Scientific/Engineering :: Information Analysis',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: MIT License',

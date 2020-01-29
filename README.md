@@ -1,7 +1,7 @@
 # Evolven API Python
 Evolven API Python is a client library for Evolven's server APIs. It provides an abstraction on top of raw Evolven API calls to interact with Evolven Server.  To get started, check out the examples or read the documentation:
 
-- Evolven API Python documentation: [Show examples](#usage)
+- Evolven API Python documentation: [Show examples](https://github.com/evolven-software/evolven-api-python#usage)
 - HTTP API documentation: [https://customers.evolven.com](https://customers.evolven.com)
 - Evolven Software: [https://www.evolven.com](https://www.evolven.com) 
 
@@ -79,7 +79,10 @@ All options are:
 ```python
 hosts = api.Host.list()
 hosts
->>>
+```
+
+Output:
+```
 | Host        | HostType | EnvId | Os                     | ... |
 |-------------|----------|-------|------------------------|-----|
 | NYUATOLD002 | Prod     | 847   | Windows 7              | ... |
@@ -89,6 +92,6 @@ hosts
 
 #### Additional examples
 
-Additional examples are shown in [Jupter notebooks here](examples).
+Additional examples are shown in [Jupter notebooks here](https://github.com/evolven-software/evolven-api-python/tree/master/examples).
 
 
