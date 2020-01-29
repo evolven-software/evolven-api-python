@@ -10,13 +10,11 @@ import random
 from .res.change import Change
 from .res.configuration import Configuration
 from .res.environment import Environment
-from .res.evaluation import Evaluation
 from .res.host import Host
 from .res.eql import EQL
 from .res.login import Login
 from .res.appdef import AppDef
 from .res.api_result import ApiResultObject
-from .res.elastic_search import ElasticSearch
 from .res.blended import Blended
 from .res.policy import Policy
 
@@ -24,7 +22,7 @@ from .res.policy import Policy
 
 class EvolvenAPI():
     
-    def __init__(self, host, port=, username=None, password=None, 
+    def __init__(self, host, port=443, username=None, password=None, 
                 db_lib = "enlight_lib", db_main = "enlight_main", db_host=None,
                 discovered_root_id=5, logical_root_id=3, debug=False, fake=False, 
                 return_type="object", session_key=None, max_retries=5):
@@ -47,11 +45,9 @@ class EvolvenAPI():
         self.Change         = Change(self)
         self.Environment    = Environment(self)
         self.Host           = Host(self, discovered_root_id)
-        self.Evaluation     = Evaluation(self)
         self.EQL            = EQL(self)
         self.Login          = Login(self)
         self.AppDef         = AppDef(self)
-        self.ElasticSearch  = ElasticSearch(self)
         self.Blended        = Blended(self)
         self.Policy         = Policy(self)
 
@@ -61,7 +57,7 @@ class EvolvenAPI():
                 self.session_key = s_key
                 self.session_key_self_assigned = False
             else:
-                raise("ERROR: Cannot login")
+                raise Exception("Cannot login")
         else:
             self.session_key = sessionKey
             self.session_key_self_assigned = False
@@ -164,8 +160,8 @@ class EvolvenAPI():
         elif return_type == "json":
             return data
 
-        # return as DataTable
-        elif return_type == "DataTable":
+        # return as DataFrame
+        elif return_type == "DataFrame":
             if records_path is not None:
                 res = self._dict2obj(data)
                 return res.toDataFrame(records_path)
