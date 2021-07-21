@@ -1,6 +1,3 @@
-from future.standard_library import install_aliases
-install_aliases()
-
 import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse
 
 import json
@@ -17,6 +14,7 @@ from .res.appdef import AppDef
 from .res.api_result import ApiResultObject
 from .res.blended import Blended
 from .res.policy import Policy
+from .res.search import Search
 
 
 
@@ -37,6 +35,8 @@ class EvolvenAPI():
         self.debug = debug
         self.fake = fake
         self.return_type = return_type
+        self.discovered_root = discovered_root_id
+        self.logical_root = logical_root_id
         self.max_retries = max_retries
         self.session_key_self_assigned = True
 
@@ -50,6 +50,7 @@ class EvolvenAPI():
         self.AppDef         = AppDef(self)
         self.Blended        = Blended(self)
         self.Policy         = Policy(self)
+        self.Search         = Search(self)
 
         if session_key is None:
             s_key = self.Login.login()
