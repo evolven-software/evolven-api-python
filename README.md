@@ -90,6 +90,23 @@ Output:
 | ...         | ...      | ...   | ...                    | ... |
 ```
 
+
+#### Query Evolven Search
+
+```python
+hosts = api.Search.search("Host where cpu-count > 8 | Hotfixes")
+hosts
+```
+
+Output:
+```
+| CIName    | Host         | EnvId | Os                     | ... |
+|-----------|--------------|-------|------------------------|-----|
+| KB4580325 | NYUATOLD002  | 847   | Windows 7              | ... |
+| KB4580325 | US3ALENG005  | 512   | Windows Server 2008 R2 | ... |
+| ...       | ...          | ...   | ...                    | ... |
+```
+
 #### Additional examples
 
 Additional examples are shown in [Jupter notebooks here](https://github.com/evolven-software/evolven-api-python/tree/master/examples).
